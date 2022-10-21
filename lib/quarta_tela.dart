@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/descricoes.dart';
 import 'package:projeto/produto.dart';
-import 'package:projeto/produto_dog_repository.dart';
+import 'package:projeto/produto_cat_repository.dart';
 
 
-class TerceiraTela extends StatefulWidget {
-  const TerceiraTela({super.key});
+class QuartaTela extends StatefulWidget {
+  const QuartaTela({super.key});
 
   @override
-  State<TerceiraTela> createState() => _TerceiraTelaState();
+  State<QuartaTela> createState() => _QuartaTelaState();
 }
 
-class _TerceiraTelaState extends State<TerceiraTela> {
+class _QuartaTelaState extends State<QuartaTela> {
   
   @override
   Widget build(BuildContext context) {
-    final dog = ProdutoDogRepository.dog;
+    final cat = ProdutoDogRepository.cat;
 
     return MaterialApp(
       theme: ThemeData(
@@ -30,20 +30,20 @@ class _TerceiraTelaState extends State<TerceiraTela> {
            ListView.separated(
             itemBuilder: (BuildContext context, int produto) {
               return ListTile(
-                leading: Image.asset(dog[produto].imagem),
+                leading: Image.asset(cat[produto].imagem),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(dog[produto].nome, 
+                    Text(cat[produto].nome, 
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("Vendedor: ${dog[produto].vendedor}"),
-                    Text("Endereço: ${dog[produto].endereco}"),
+                    Text("Vendedor: ${cat[produto].vendedor}"),
+                    Text("Endereço: ${cat[produto].endereco}"),
                   ],
                 ),
-                trailing: Text("${dog[produto].preco.toStringAsFixed(2)}"),
+                trailing: Text("${cat[produto].preco.toStringAsFixed(2)}"),
                 onTap: () {
                     Navigator.push(
                       context, 
@@ -58,7 +58,7 @@ class _TerceiraTelaState extends State<TerceiraTela> {
             },
               padding: EdgeInsets.all(8),
               separatorBuilder: (_,__) => Divider(),
-              itemCount: dog.length,
+              itemCount: cat.length,
              
             ),
             

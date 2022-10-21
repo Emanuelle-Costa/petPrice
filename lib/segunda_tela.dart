@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto/quarta_tela.dart';
 import 'package:projeto/terceira_tela.dart';
 
 class SegundaTela extends StatefulWidget {
@@ -76,7 +77,7 @@ class _SegundaTelaState extends State<SegundaTela> {
                         context, 
                         MaterialPageRoute(
                           builder: (context) {
-                            return TerceiraTela();
+                            return QuartaTela();
                             }
                           ),
                         );

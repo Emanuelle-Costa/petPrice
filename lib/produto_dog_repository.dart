@@ -1,7 +1,7 @@
 import 'package:projeto/produto.dart';
 
-class ProdutoRepository{
-    static List<Produto> produtos = [
+class ProdutoDogRepository{
+    static List<Produto> dog = [
     Produto('images/cãoFilhote.jpg', 'Ração Golden Cachorro Filhote 10kg', 165.90, 'Vida Pet', 'Rua fulano de tal'),
     Produto('images/GranDogFilhote.jpg', 'Ração Gran Plus Cachorro Filhote 10kg', 155.90, 'Vida Pet', 'Rua fulano de tal'),
     
