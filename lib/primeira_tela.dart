@@ -19,7 +19,7 @@ class _PrimeiraTelaState extends State<PrimeiraTela> {
       home: Scaffold(
         backgroundColor: Color.fromRGBO(126, 214, 88, 1.0),
         appBar: AppBar(
-        title: Text("Pet Prince"),
+        title: Text("Pet Price"),
       ),
       body: Center(
         child: Container(
