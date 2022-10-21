@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto/descricoes.dart';
 import 'package:projeto/produto.dart';
 import 'package:projeto/produto_dog_repository.dart';
+import 'package:intl/intl.dart';
 
 
 class TerceiraTela extends StatefulWidget {
@@ -16,6 +17,7 @@ class _TerceiraTelaState extends State<TerceiraTela> {
   @override
   Widget build(BuildContext context) {
     final dog = ProdutoDogRepository.dog;
+    NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
     return MaterialApp(
       theme: ThemeData(
@@ -43,7 +45,7 @@ class _TerceiraTelaState extends State<TerceiraTela> {
                     Text("Endereço: ${dog[produto].endereco}"),
                   ],
                 ),
-                trailing: Text("${dog[produto].preco.toStringAsFixed(2)}"),
+                trailing: Text(real.format(dog[produto].preco)),
                 onTap: () {
                     Navigator.push(
                       context, 

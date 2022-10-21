@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto/descricoes.dart';
 import 'package:projeto/produto.dart';
 import 'package:projeto/produto_cat_repository.dart';
-
+import 'package:intl/intl.dart';
 
 class QuartaTela extends StatefulWidget {
   const QuartaTela({super.key});
@@ -16,6 +16,7 @@ class _QuartaTelaState extends State<QuartaTela> {
   @override
   Widget build(BuildContext context) {
     final cat = ProdutoDogRepository.cat;
+    NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
     return MaterialApp(
       theme: ThemeData(
@@ -43,7 +44,7 @@ class _QuartaTelaState extends State<QuartaTela> {
                     Text("Endereço: ${cat[produto].endereco}"),
                   ],
                 ),
-                trailing: Text("${cat[produto].preco.toStringAsFixed(2)}"),
+                trailing: Text(real.format(cat[produto].preco)),
                 onTap: () {
                     Navigator.push(
                       context, 
