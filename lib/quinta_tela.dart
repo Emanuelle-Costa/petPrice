@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/descricoes.dart';
 import 'package:projeto/produto.dart';
-import 'package:projeto/produto_dog_repository.dart';
+import 'package:projeto/produto_cat_repository.dart';
 import 'package:intl/intl.dart';
 
-
-class TerceiraTela extends StatefulWidget {
-  const TerceiraTela({super.key});
+class QuintaTela extends StatefulWidget {
+  const QuintaTela({super.key});
 
   @override
-  State<TerceiraTela> createState() => _TerceiraTelaState();
+  State<QuintaTela> createState() => _QuintaTelaState();
 }
 
-class _TerceiraTelaState extends State<TerceiraTela> {
+class _QuintaTelaState extends State<QuintaTela> {
   
   @override
   Widget build(BuildContext context) {
-    final dog = ProdutoDogRepository.dog;
+    final cat = ProdutoDogRepository.cat;
     NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
     return MaterialApp(
@@ -32,22 +31,21 @@ class _TerceiraTelaState extends State<TerceiraTela> {
            ListView.separated(
             itemBuilder: (BuildContext context, int produto) {
               return ListTile(
-                leading: Image.asset(dog[produto].imagem),
+                leading: Image.asset(cat[produto].imagem),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(dog[produto].nome, 
+                    Text(cat[produto].nome, 
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("Vendedor: ${dog[produto].vendedor}"),
-                    Text("Endereço: ${dog[produto].endereco}"),
+                    Text("Vendedor: ${cat[produto].vendedor}"),
+                    Text("Endereço: ${cat[produto].endereco}"),
                   ],
                 ),
-                trailing: Text(real.format(dog[produto].preco)),
+                trailing: Text(real.format(cat[produto].preco)),
                 onTap: () {
-                
                     Navigator.push(
                       context, 
                       MaterialPageRoute(
@@ -61,7 +59,7 @@ class _TerceiraTelaState extends State<TerceiraTela> {
             },
               padding: EdgeInsets.all(8),
               separatorBuilder: (_,__) => Divider(),
-              itemCount: dog.length,
+              itemCount: cat.length,
              
             ),
             

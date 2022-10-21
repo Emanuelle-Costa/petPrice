@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:projeto/quinta_tela.dart';
 import 'package:projeto/quarta_tela.dart';
 import 'package:projeto/terceira_tela.dart';
 
@@ -10,7 +12,7 @@ class SegundaTela extends StatefulWidget {
 }
 
 class _SegundaTelaState extends State<SegundaTela> {
-  String? racao;
+  String? opescolhida;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +37,11 @@ class _SegundaTelaState extends State<SegundaTela> {
               ListTile(
                 title: const Text('Rações Caninas'),
                 leading: Radio(
-                  value:  "Rações Caninas",
-                  groupValue: racao, 
+                  value:  "Caninas",
+                  groupValue: opescolhida, 
                   onChanged: (value){
                     setState(() {
-                      racao = value.toString();
+                      opescolhida = value.toString();
                     });
                   }
                   )
@@ -47,11 +49,11 @@ class _SegundaTelaState extends State<SegundaTela> {
               ListTile(
                 title: const Text('Rações Felinas'),
                 leading: Radio(
-                  value:  "Rações Felinas",
-                  groupValue: racao, 
+                  value:  "Felinas",
+                  groupValue: opescolhida, 
                   onChanged: (value){
                     setState(() {
-                      racao = value.toString();
+                      opescolhida = value.toString();
                     });
                   }
                   )
@@ -60,10 +62,10 @@ class _SegundaTelaState extends State<SegundaTela> {
                 title: const Text('Acessórios'),
                 leading: Radio(
                   value:  "Acessórios",
-                  groupValue: racao, 
+                  groupValue: opescolhida, 
                   onChanged: (value){
                     setState(() {
-                      racao = value.toString();
+                      opescolhida = value.toString();
                     });
                   }
                   )
@@ -73,14 +75,43 @@ class _SegundaTelaState extends State<SegundaTela> {
                 children: [
                   ElevatedButton(
                     onPressed: (){
-                      Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return QuartaTela();
+                      if (opescolhida == "Caninas"){
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) {
+                            return TerceiraTela();
                             }
                           ),
                         );
+                      } else if(opescolhida == "Felinas"){
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return QuartaTela();
+                            }
+                          ),
+                        );
+                      } else if(opescolhida == "Acessórios"){
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) {
+                            return QuintaTela();
+                            }
+                          ),
+                        );
+                      } else{
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) {
+                            return QuintaTela();
+                            }
+                          ),
+                        );
+                      }
                     },
                     child: Text("Buscar"),
                   ),
@@ -93,4 +124,5 @@ class _SegundaTelaState extends State<SegundaTela> {
         )
     );
   }
+  
 }

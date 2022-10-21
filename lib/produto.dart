@@ -1,6 +1,3 @@
-
-import 'dart:ffi';
-
 class Produto{
   String imagem;
   String nome;
