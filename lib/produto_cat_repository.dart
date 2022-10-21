@@ -1,6 +1,6 @@
 import 'package:projeto/produto.dart';
 
-class ProdutoDogRepository{
+class ProdutoCatRepository{
   static List<Produto> cat = [
     Produto('images/catFilhote.jpg', 'Ração Golden Gato Filhote 10,1kg', 155.69, 'Pet Love', 'Loja Online'),
     Produto('images/wCatFilhote.jpg', 'Ração Whiskas Gato Filhote 10,1kg', 155.69, 'Pet Love', 'Loja Online'),

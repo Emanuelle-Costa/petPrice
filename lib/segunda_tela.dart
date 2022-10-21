@@ -61,7 +61,7 @@ class _SegundaTelaState extends State<SegundaTela> {
               ListTile(
                 title: const Text('Acessórios'),
                 leading: Radio(
-                  value:  "Acessórios",
+                  value:  "Acessorios",
                   groupValue: opescolhida, 
                   onChanged: (value){
                     setState(() {
@@ -93,7 +93,7 @@ class _SegundaTelaState extends State<SegundaTela> {
                             }
                           ),
                         );
-                      } else if(opescolhida == "Acessórios"){
+                      } else if(opescolhida == "Acessorios"){
                         Navigator.push(
                           context, 
                           MaterialPageRoute(
@@ -103,14 +103,7 @@ class _SegundaTelaState extends State<SegundaTela> {
                           ),
                         );
                       } else{
-                        Navigator.push(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context) {
-                            return QuintaTela();
-                            }
-                          ),
-                        );
+                        print("opção invalida");
                       }
                     },
                     child: Text("Buscar"),

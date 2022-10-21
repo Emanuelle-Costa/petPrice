@@ -15,7 +15,7 @@ class _QuartaTelaState extends State<QuartaTela> {
   
   @override
   Widget build(BuildContext context) {
-    final cat = ProdutoDogRepository.cat;
+    final cat = ProdutoCatRepository.cat;
     NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
     return MaterialApp(

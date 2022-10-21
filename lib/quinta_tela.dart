@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/descricoes.dart';
 import 'package:projeto/produto.dart';
-import 'package:projeto/produto_cat_repository.dart';
 import 'package:intl/intl.dart';
+
+import 'acessorios_repository.dart';
 
 class QuintaTela extends StatefulWidget {
   const QuintaTela({super.key});
@@ -15,7 +16,7 @@ class _QuintaTelaState extends State<QuintaTela> {
   
   @override
   Widget build(BuildContext context) {
-    final cat = ProdutoDogRepository.cat;
+    final acessorio = AcessoriosRepository.acessorio;
     NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
     return MaterialApp(
@@ -31,20 +32,20 @@ class _QuintaTelaState extends State<QuintaTela> {
            ListView.separated(
             itemBuilder: (BuildContext context, int produto) {
               return ListTile(
-                leading: Image.asset(cat[produto].imagem),
+                leading: Image.asset(acessorio[produto].imagem),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(cat[produto].nome, 
+                    Text(acessorio[produto].nome, 
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("Vendedor: ${cat[produto].vendedor}"),
-                    Text("Endereço: ${cat[produto].endereco}"),
+                    Text("Vendedor: ${acessorio[produto].vendedor}"),
+                    Text("Endereço: ${acessorio[produto].endereco}"),
                   ],
                 ),
-                trailing: Text(real.format(cat[produto].preco)),
+                trailing: Text(real.format(acessorio[produto].preco)),
                 onTap: () {
                     Navigator.push(
                       context, 
@@ -59,7 +60,7 @@ class _QuintaTelaState extends State<QuintaTela> {
             },
               padding: EdgeInsets.all(8),
               separatorBuilder: (_,__) => Divider(),
-              itemCount: cat.length,
+              itemCount: acessorio.length,
              
             ),
             
